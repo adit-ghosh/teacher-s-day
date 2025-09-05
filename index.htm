@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Teacher’s Day</title>
+  <!-- Favicon: Book emoji as SVG data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'%3E%3Ctext y='60' font-size='60'%3E%F0%9F%93%9A%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: hsl(42, 88%, 65%);
+      --secondary: hsl(35, 35%, 90%);
+      --background: linear-gradient(135deg, #fffbe6 0%, #ffe6e6 100%);
+      --text: hsl(220, 15%, 15%);
+      --accent: #ffb347;
+      --card-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", "Segoe Script", sans-serif;
+    }
+    body {
+      background: var(--background);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+    /* Decorative floating books */
+    .decor {
+      position: absolute;
+      opacity: 0.13;
+      font-size: 4rem;
+      pointer-events: none;
+      user-select: none;
+      animation: float 8s infinite alternate;
+    }
+    .decor.book1 { top: 5%; left: 7%; animation-delay: 0s;}
+    .decor.book2 { top: 15%; right: 10%; font-size: 3.5rem; animation-delay: 2s;}
+    .decor.flower { bottom: 8%; left: 12%; font-size: 3.2rem; animation-delay: 1s;}
+    .decor.star { bottom: 12%; right: 8%; font-size: 2.8rem; animation-delay: 3s;}
+    @keyframes float {
+      from { transform: translateY(0);}
+      to { transform: translateY(-20px);}
+    }
+    header {
+      margin-bottom: 2.2rem;
+    }
+    h1 {
+      font-size: 2.7rem;
+      color: var(--primary);
+      letter-spacing: 1px;
+      text-shadow: 0 2px 10px #fff7, 0 1px 0 #ffe6b3;
+      font-family: "Segoe Script", cursive, sans-serif;
+    }
+    .quote {
+      font-style: italic;
+      color: #b07d2c;
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.2px;
+    }
+    .card {
+      background: rgba(255,255,255,0.97);
+      padding: 2.5rem 2rem 2rem 2rem;
+      border-radius: 1.2rem;
+      box-shadow: var(--card-shadow);
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 1.5s cubic-bezier(.7,.2,.3,1);
+    }
+    p {
+      font-size: 1.18rem;
+      max-width: 600px;
+      line-height: 1.7;
+      margin: 1.1rem auto;
+    }
+    .signature {
+      margin-top: 2.2rem;
+      font-family: "Segoe Script", cursive, sans-serif;
+      font-size: 1.1rem;
+      color: #b07d2c;
+      opacity: 0.85;
+    }
+    .btn {
+      margin-top: 2.2rem;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border: none;
+      padding: 0.9rem 2.2rem;
+      border-radius: 0.7rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 4px 18px #ffd58044;
+      transition: background 0.3s, transform 0.2s;
+      letter-spacing: 0.5px;
+    }
+    .btn:hover {
+      background: linear-gradient(90deg, #ffd580, #ffb347);
+      transform: translateY(-2px) scale(1.04);
+    }
+    #surprise {
+      margin-top:1.7rem;
+      font-weight:bold;
+      display:none;
+      color:hsl(220,40%,25%);
+      font-size: 1.18rem;
+      animation: popIn 1.2s cubic-bezier(.7,.2,.3,1);
+    }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.8);}
+      80% { opacity: 1; transform: scale(1.05);}
+      100% { opacity: 1; transform: scale(1);}
+    }
+    .confetti {
+      position: fixed;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 99;
+    }
+    footer {
+      margin-top: 3.5rem;
+      font-size: 1rem;
+      color: #b07d2c;
+      opacity: 0.7;
+      letter-spacing: 0.2px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .card { padding: 1.3rem 0.7rem 1.2rem 0.7rem; }
+      p, #surprise { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <span class="decor book1">📚</span>
+  <span class="decor book2">📖</span>
+  <span class="decor flower">🌸</span>
+  <span class="decor star">⭐</span>
+  <header>
+    <h1>🌸 Happy Teacher’s Day 🌸</h1>
+    <div class="quote">
+      “A good teacher is like a candle—it consumes itself to light the way for others.”<br>
+      <span style="font-size:0.95em; opacity:0.7;">— Mustafa Kemal Atatürk</span>
+    </div>
+  </header>
+  <main class="card">
+    <p>
+      To all the wonderful teachers, thank you for being the guiding stars in our lives.<br>
+      Your patience, wisdom, and kindness shape not just our minds, but our hearts.
+    </p>
+    <p>
+      You plant seeds of knowledge that blossom for a lifetime.<br>
+      Today, we honor <strong>you</strong>—the mentors, the dreamers, the inspirers.
+    </p>
+    <button class="btn" onclick="showMessage()">Click for a Surprise 🎁</button>
+    <p id="surprise">
+      You are the reason someone believes in themselves.<br>
+      Your words echo in our successes, your care in our courage.<br>
+      <span style="font-size:1.5em; color:#e67e22;">Thank you for being a light in the world! 🌟</span>
+    </p>
+    <div class="signature">With heartfelt gratitude,<br>— Your Students</div>
+  </main>
+  <footer>
+    Made with ❤️ to honor Teachers everywhere
+  </footer>
+  <canvas class="confetti" id="confetti-canvas" style="display:none"></canvas>
+  <script>
+    function showMessage() {
+      document.getElementById("surprise").style.display = "block";
+      launchConfetti();
+    }
+
+    // Simple confetti animation
+    function launchConfetti() {
+      const canvas = document.getElementById('confetti-canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      canvas.style.display = 'block';
+
+      const colors = ['#ffd700', '#ffb347', '#ff6961', '#b07d2c', '#fffbe6', '#ffe6e6'];
+      const confetti = [];
+      for (let i = 0; i < 80; i++) {
+        confetti.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * -canvas.height,
+          r: Math.random() * 7 + 4,
+          d: Math.random() * 80 + 20,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          tilt: Math.random() * 10 - 5,
+          tiltAngle: 0,
+          tiltAngleIncremental: (Math.random() * 0.07) + 0.05
+        });
+      }
+      let angle = 0;
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        angle += 0.01;
+        for (let i = 0; i < confetti.length; i++) {
+          let c = confetti[i];
+          c.y += (Math.cos(angle + c.d) + 1 + c.r / 2) * 0.9;
+          c.x += Math.sin(angle) * 2;
+          c.tiltAngle += c.tiltAngleIncremental;
+          c.tilt = Math.sin(c.tiltAngle) * 15;
+          ctx.beginPath();
+          ctx.lineWidth = c.r;
+          ctx.strokeStyle = c.color;
+          ctx.moveTo(c.x + c.tilt + c.r, c.y);
+          ctx.lineTo(c.x + c.tilt, c.y + c.tilt + c.r);
+          ctx.stroke();
+        }
+      }
+      let frame = 0;
+      function animate() {
+        draw();
+        frame++;
+        if (frame < 120) {
+          requestAnimationFrame(animate);
+        } else {
+          canvas.style.display = 'none';
+        }
+      }
+      animate();
+    }
+  </script>
+</body>
+</html>
